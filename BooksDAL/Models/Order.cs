@@ -52,6 +52,8 @@ namespace BooksDAL.Models
         public OrderStatus OrderStatus { get; set; }
 
         public decimal OrderValue { get; set; }
+        [Timestamp]
+        public byte[] Timestamp { get; set; }
 
         public List<OrderPosition> OrderPositions { get; set; }
     }

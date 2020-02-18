@@ -10,6 +10,7 @@ namespace BooksDAL.Models
 {
     public class User
     {
+        public int UserId { get; set; }
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
@@ -25,6 +26,8 @@ namespace BooksDAL.Models
 
         [EmailAddress(ErrorMessage = "Błędny format adresu e-mail.")]
         public string Email { get; set; }
+        [Timestamp]
+        public byte[] Timestamp { get; set; }
 
         [NotMapped]
         public string FullName => FirstName + " " + LastName;

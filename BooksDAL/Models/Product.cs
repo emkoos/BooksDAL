@@ -32,6 +32,8 @@ namespace BooksDAL.Models
         public bool Hidden { get; set; }
         public string ImageFileName { get; set; }
         public string ImagesName { get; set; }
+        [Timestamp]
+        public byte[] Timestamp { get; set; }
 
         [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
