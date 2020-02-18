@@ -27,8 +27,11 @@ namespace BooksDAL.Models
         public string PublishingHouse { get; set; }
         public string CardDimensions { get; set; }
         public bool Bestseller { get; set; }
+        public bool Preview { get; set; }
+        public bool Old { get; set; }
         public bool Hidden { get; set; }
         public string ImageFileName { get; set; }
+        public string ImagesName { get; set; }
 
         [ForeignKey("CategoryId")]
         public virtual Category Category { get; set; }
