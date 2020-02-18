@@ -18,9 +18,7 @@ namespace BooksDAL.Models
 
         [Timestamp]
         public byte[] Timestamp { get; set; }
-        [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
-        [ForeignKey("OderId")]
         public virtual Order Order { get; set; }
     }
 }

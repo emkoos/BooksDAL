@@ -1,18 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BooksDAL.Models;
-using System.Data.Entity;
-
-namespace BooksDAL.EF
+﻿namespace BooksDAL.Migrations
 {
-    public class DataInitializer : DropCreateDatabaseAlways<BooksEntities>
+    using BooksDAL.Models;
+    using System;
+    using System.Collections.Generic;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<BooksDAL.EF.BooksEntities>
     {
-        protected override void Seed(BooksEntities context)
+        public Configuration()
         {
-            var users = new List<User>
+            AutomaticMigrationsEnabled = false;
+            ContextKey = "BooksDAL.EF.BooksEntities";
+        }
+
+        protected override void Seed(BooksDAL.EF.BooksEntities context)
+        {
+            //  This method will be called after migrating to the latest version.
+
+            /*var users = new List<User>
             {
                 new User {FirstName="Adam", LastName="Nowak"},
                 new User {FirstName="Alicja", LastName="Zając"},
@@ -20,14 +27,14 @@ namespace BooksDAL.EF
                 new User {FirstName="Zenon", LastName="Karaś"},
                 new User {FirstName="Katarzyna", LastName="Kowalska"}
             };
-            users.ForEach(x => context.Users.Add(x));
+            users.ForEach(x => context.Users.AddOrUpdate(c=>new { c.FirstName, c.LastName},x));
 
             var categories = new List<Category>
             {
                 new Category {CategoryId=1,CategoryName="Karty", CategoryDescription="Karty oraz przewodniki ezoteryczne."},
                 new Category {CategoryId=2,CategoryName="E-booki", CategoryDescription="Karty oraz przewodniki ezoteryczne zawarte w E-bookach."}
             };
-            categories.ForEach(x => context.Categories.Add(x));
+            categories.ForEach(x => context.Categories.AddOrUpdate(i=> new { i.CategoryId,i.CategoryName,i.CategoryDescription},x));
 
             var products = new List<Product>
             {
@@ -37,9 +44,10 @@ namespace BooksDAL.EF
                 new Product {ProductTitle="Cud jednorożców", CategoryId=1, ProductAuthor="COOPER DIANA", ProductDescription="Opis", ProductShortDescription="Krótki opis", AddedDate=DateTime.Now, ProductPrice=122,ISBN="978-80-7370-151-2"},
                 new Product {ProductTitle="Mistyczny Tarot Marzyciela", CategoryId=1, ProductAuthor="HEIDI DARRAS, BARBARA MOORE", ProductDescription="Opis", ProductShortDescription="Krótki opis", AddedDate=DateTime.Now, ProductPrice=98,ISBN="978-80-7370-183-3"}
             };
-            products.ForEach(x => context.Products.Add(x));
-
-            context.SaveChanges();
+            products.ForEach(x => context.Products.AddOrUpdate(j=> new { j.ProductTitle, j.CategoryId,j.ProductAuthor,j.ProductDescription,j.ProductShortDescription,j.AddedDate,j.ProductPrice,j.ISBN},x));
+            */
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
+            //  to avoid creating duplicate seed data.
         }
     }
 }
