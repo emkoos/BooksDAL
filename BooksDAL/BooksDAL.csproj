@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EF\BooksEntities.cs" />
+    <Compile Include="EF\DataInitializer.cs" />
     <Compile Include="Models\CartPosition.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Order.cs" />
