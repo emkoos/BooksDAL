@@ -7,13 +7,13 @@ namespace BooksDAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class Product_Info_Field : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Product_Info_Field));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "202002181953013_Product_Info_Field"; }
+            get { return "202002191230440_Initial"; }
         }
         
         string IMigrationMetadata.Source

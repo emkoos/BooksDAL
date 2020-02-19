@@ -55,17 +55,9 @@
   <ItemGroup>
     <Compile Include="EF\BooksEntities.cs" />
     <Compile Include="EF\DataInitializer.cs" />
-    <Compile Include="Migrations\202002181938422_InitialCreate.cs" />
-    <Compile Include="Migrations\202002181938422_InitialCreate.designer.cs">
-      <DependentUpon>202002181938422_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002181949552_TimeStamps.cs" />
-    <Compile Include="Migrations\202002181949552_TimeStamps.designer.cs">
-      <DependentUpon>202002181949552_TimeStamps.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202002181953013_Product_Info_Field.cs" />
-    <Compile Include="Migrations\202002181953013_Product_Info_Field.designer.cs">
-      <DependentUpon>202002181953013_Product_Info_Field.cs</DependentUpon>
+    <Compile Include="Migrations\202002191230440_Initial.cs" />
+    <Compile Include="Migrations\202002191230440_Initial.designer.cs">
+      <DependentUpon>202002191230440_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CartPosition.cs" />
@@ -90,14 +82,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202002181938422_InitialCreate.resx">
-      <DependentUpon>202002181938422_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002181949552_TimeStamps.resx">
-      <DependentUpon>202002181949552_TimeStamps.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202002181953013_Product_Info_Field.resx">
-      <DependentUpon>202002181953013_Product_Info_Field.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202002191230440_Initial.resx">
+      <DependentUpon>202002191230440_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

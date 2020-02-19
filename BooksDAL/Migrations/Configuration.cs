@@ -11,15 +11,16 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "BooksDAL.EF.BooksEntities";
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(BooksDAL.EF.BooksEntities context)
         {
             //  This method will be called after migrating to the latest version.
 
-            /*var users = new List<User>
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
+            //  to avoid creating duplicate seed data.
+            var users = new List<User>
             {
                 new User {FirstName="Adam", LastName="Nowak"},
                 new User {FirstName="Alicja", LastName="Zając"},
@@ -27,14 +28,14 @@
                 new User {FirstName="Zenon", LastName="Karaś"},
                 new User {FirstName="Katarzyna", LastName="Kowalska"}
             };
-            users.ForEach(x => context.Users.AddOrUpdate(c=>new { c.FirstName, c.LastName},x));
+            users.ForEach(x => context.Users.AddOrUpdate(u=> new { u.FirstName, u.LastName},x));
 
             var categories = new List<Category>
             {
                 new Category {CategoryId=1,CategoryName="Karty", CategoryDescription="Karty oraz przewodniki ezoteryczne."},
                 new Category {CategoryId=2,CategoryName="E-booki", CategoryDescription="Karty oraz przewodniki ezoteryczne zawarte w E-bookach."}
             };
-            categories.ForEach(x => context.Categories.AddOrUpdate(i=> new { i.CategoryId,i.CategoryName,i.CategoryDescription},x));
+            categories.ForEach(x => context.Categories.AddOrUpdate(c=> new { c.CategoryId, c.CategoryName, c.CategoryDescription},x));
 
             var products = new List<Product>
             {
@@ -44,10 +45,7 @@
                 new Product {ProductTitle="Cud jednorożców", CategoryId=1, ProductAuthor="COOPER DIANA", ProductDescription="Opis", ProductShortDescription="Krótki opis", AddedDate=DateTime.Now, ProductPrice=122,ISBN="978-80-7370-151-2"},
                 new Product {ProductTitle="Mistyczny Tarot Marzyciela", CategoryId=1, ProductAuthor="HEIDI DARRAS, BARBARA MOORE", ProductDescription="Opis", ProductShortDescription="Krótki opis", AddedDate=DateTime.Now, ProductPrice=98,ISBN="978-80-7370-183-3"}
             };
-            products.ForEach(x => context.Products.AddOrUpdate(j=> new { j.ProductTitle, j.CategoryId,j.ProductAuthor,j.ProductDescription,j.ProductShortDescription,j.AddedDate,j.ProductPrice,j.ISBN},x));
-            */
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data.
+            products.ForEach(x => context.Products.AddOrUpdate(p=> new { p.ProductTitle, p.CategoryId, p.ProductAuthor, p.ProductDescription, p.ProductShortDescription, p.AddedDate, p.ProductPrice, p.ISBN}));
         }
     }
 }
