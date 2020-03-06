@@ -24,18 +24,20 @@ namespace BooksDAL.EF
 
             var categories = new List<Category>
             {
-                new Category {CategoryId=1,CategoryName="Karty", CategoryDescription="Karty oraz przewodniki ezoteryczne."},
-                new Category {CategoryId=2,CategoryName="E-booki", CategoryDescription="Karty oraz przewodniki ezoteryczne zawarte w E-bookach."}
+                new Category {CategoryId=1,CategoryName="Powieści", CategoryDescription="Powieści z łatwością odbierzesz najlepiej wieczorami."},
+                new Category {CategoryId=2,CategoryName="Kryminały", CategoryDescription="Kryminały to najlepsze pozycje na piątkowy wieczór."},
+                new Category {CategoryId=3,CategoryName="Dla dzieci", CategoryDescription="Pozycje dla twojego dziecka."},
+
             };
             categories.ForEach(x => context.Categories.Add(x));
 
             var products = new List<Product>
             {
-                new Product {ProductTitle="Tarot zwierciadło duszy", CategoryId=1, ProductAuthor="Gerd Ziegler", ProductDescription="Opis", ProductShortDescription="Krótki opis", AddedDate=DateTime.Now, ProductPrice=111,ISBN="978-80-7370-191-8"},
-                new Product {ProductTitle="Mistrzowie Duchowi", CategoryId=1, ProductAuthor="Dr Doreen Virtue", ProductDescription="Opis", ProductShortDescription="Krótki opis", AddedDate=DateTime.Now, ProductPrice=79,ISBN="978-80-7370-047-8"},
-                new Product {ProductTitle="Tarot Thota", CategoryId=1, ProductAuthor="ALEISTER CROWLEY", ProductDescription="Opis", ProductShortDescription="Krótki opis", AddedDate=DateTime.Now, ProductPrice=62,ISBN="978-80-7370-179-6"},
-                new Product {ProductTitle="Cud jednorożców", CategoryId=1, ProductAuthor="COOPER DIANA", ProductDescription="Opis", ProductShortDescription="Krótki opis", AddedDate=DateTime.Now, ProductPrice=122,ISBN="978-80-7370-151-2"},
-                new Product {ProductTitle="Mistyczny Tarot Marzyciela", CategoryId=1, ProductAuthor="HEIDI DARRAS, BARBARA MOORE", ProductDescription="Opis", ProductShortDescription="Krótki opis", AddedDate=DateTime.Now, ProductPrice=98,ISBN="978-80-7370-183-3"}
+                new Product {ProductTitle="Produkt 1", CategoryId=1, ProductAuthor="Autor 1", ProductDescription="Opis", ProductShortDescription="Krótki opis", AddedDate=DateTime.Now, ProductPrice=111,ISBN="932-50-7360-423-4"},
+                new Product {ProductTitle="Produkt 2", CategoryId=3, ProductAuthor="Autor 2", ProductDescription="Opis", ProductShortDescription="Krótki opis", AddedDate=DateTime.Now, ProductPrice=79,ISBN="948-32-3560-363-7"},
+                new Product {ProductTitle="Produkt 3", CategoryId=2, ProductAuthor="Autor 3", ProductDescription="Opis", ProductShortDescription="Krótki opis", AddedDate=DateTime.Now, ProductPrice=62,ISBN="832-30-3360-553-3"},
+                new Product {ProductTitle="Produkt 4", CategoryId=1, ProductAuthor="Autor 4", ProductDescription="Opis", ProductShortDescription="Krótki opis", AddedDate=DateTime.Now, ProductPrice=122,ISBN="902-54-7356-433-8"},
+                new Product {ProductTitle="Produkt 5", CategoryId=2, ProductAuthor="Autor 5", ProductDescription="Opis", ProductShortDescription="Krótki opis", AddedDate=DateTime.Now, ProductPrice=98,ISBN="976-64-7655-654-1"}
             };
             products.ForEach(x => context.Products.Add(x));
 
